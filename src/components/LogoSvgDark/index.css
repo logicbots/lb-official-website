@@ -1,0 +1,44 @@
+#Layer_1 {
+  height: 60vh;
+}
+.cls-1 {
+  fill: #fff;
+}
+.cls-2,
+.cls-5 {
+  fill-rule: evenodd;
+}
+.cls-3 {
+  fill: none;
+}
+.cls-4 {
+  clip-path: url(#clip-path);
+}
+.cls-5,
+.cls-6 {
+  fill: #f5b301;
+}
+.cls-7 {
+  mask: url(#mask);
+}
+.cls-8 {
+  clip-path: url(#clip-path-2);
+}
+.cls-9 {
+  fill: #878585;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-path {
+  animation: fadeInOut 2s ease-in-out 2;
+}
