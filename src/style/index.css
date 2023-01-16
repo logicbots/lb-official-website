@@ -1,0 +1,14 @@
+.logoSvg{
+    height: 60vh;
+}
+.bg-light-svg{
+    background-color: #c9daf8;
+}
+.height-100{
+    height: 100vh;
+}.bg-dark-svg{
+    background-color: black;
+}
+.cursor{
+    cursor: pointer;
+}
