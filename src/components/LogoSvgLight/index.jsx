@@ -123,9 +123,10 @@ const LogoSvgLight = (props) => {
           />
           <g class="cls-707">
             <path
-              class="cls-808"
+              class="cls-808 cursor"
               d="M864.5,421.1a24.1,24.1,0,0,0,0,46c-1.2.3-12.5,2.9-22-5-1.1-.9-9.7-8.3-9-20a24.1,24.1,0,0,1,16-21A24.4,24.4,0,0,1,864.5,421.1Z"
               transform="translate(-762.5 -405)"
+              onClick={()=>props.onClick()}
             />
           </g>
           <circle class="cls-808 fade-path" cx="170" cy="138" r="24" />
