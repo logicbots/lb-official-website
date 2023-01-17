@@ -1,14 +1,40 @@
-.logoSvg{
-    height: 60vh;
+.logoSvg {
+  height: 60vh;
 }
-.bg-light-svg{
-    background-color: #c9daf8;
+.bg-light-svg {
+  background-color: #c9daf8;
 }
-.height-100{
-    height: 100vh;
-}.bg-dark-svg{
-    background-color: black;
+.height-100 {
+  height: 100vh;
 }
-.cursor{
-    cursor: pointer;
+.bg-dark-svg {
+  background-color: black;
+}
+.cursor {
+  cursor: pointer;
+}
+.text-light-theme {
+  color: #4a86e8;
+  font-size: 2vw;
+  margin-bottom: 0;
+}
+.text-dark-theme {
+  color: #595959;
+  font-size: 2vw;
+  margin-bottom: 0;
+}
+.svgDiv {
+  z-index: -1;
+}
+.textDiv {
+  z-index: 1;
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+}
+.noselect {
+  -webkit-user-select: none; /* Chrome all / Safari all */
+  -moz-user-select: none; /* Firefox all */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Likely future */
 }
