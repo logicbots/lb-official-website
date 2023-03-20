@@ -3,9 +3,9 @@ import "./index.css";
 
 const ThemeSwitch = () => {
   return (
-    <span class="switcher switcher-1">
+    <span className="switcher switcher-1">
       <input type="checkbox" id="switcher-1" />
-      <label for="switcher-1"></label>
+      <label></label>
     </span>
   );
 };

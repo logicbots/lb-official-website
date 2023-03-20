@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import logoDark from "../../assets/dark.svg";
-import defaultLogo from "../../assets/logo-right.svg";
 import quotes from "../../assets/quotes.svg";
-import team from "../../assets/team.svg";
 import "./index.css";
 import ThemeSwitch from "../ThemeSwitch";
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
@@ -51,14 +49,18 @@ const AboutUs = () => {
   return (
     <div className="aboutUs">
       <div className="height-100 bg-dark-svg pt-4">
-        <div className="header">
-          <div className="logo-top">
-            <img src={logoDark} className="logoTopLeft" />
+        <div className="row mx-0">
+          <div className="col-6">
+            <div className="logo-top">
+              <img src={logoDark} className="logoTopLeft" />
+            </div>
           </div>
-          <div className="logo-top-right d-flex">
-            <p className="text-dark-color mb-0">ABOUT US</p>
-            <EyeLogo />
-            {/* <img src={defaultLogo} /> */}
+          <div className="col-6">
+            <div className="logo-top-right d-flex">
+              <p className="text-dark-color mb-0">ABOUT US</p>
+              <EyeLogo />
+              {/* <img src={defaultLogo} /> */}
+            </div>
           </div>
         </div>
         <div className="row mx-0">
