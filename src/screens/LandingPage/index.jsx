@@ -5,17 +5,17 @@ import TeamSvgDark from "../../components/TeamSvgDark";
 import "../../style/index.css";
 
 const LandingPage = () => {
-  const [themeClass, setThemeClass] = useState("bg-light-svg");
-  const [textColor, setTextColor] = useState("text-light-theme");
+  const [themeClass, setThemeClass] = useState("bg-dark-svg");
+  const [textColor, setTextColor] = useState("text-dark-theme");
   const [isVisible, setIsVisible] = useState(false);
 
   const changeTheme = () => {
     if (!isVisible) {
-      setThemeClass("bg-dark-svg");
-      setTextColor("text-dark-theme");
-    } else {
       setThemeClass("bg-light-svg");
       setTextColor("text-light-theme");
+    } else {
+      setThemeClass("bg-dark-svg");
+      setTextColor("text-dark-theme");
     }
     setIsVisible(!isVisible);
   };
@@ -28,9 +28,9 @@ const LandingPage = () => {
             className={`d-flex justify-content-center align-items-center height-100  ${themeClass}`}
           >
             {isVisible ? (
-              <LogoSvgDark onClick={changeTheme} />
-            ) : (
               <LogoSvgLight onClick={changeTheme} />
+            ) : (
+              <LogoSvgDark onClick={changeTheme} />
             )}
             {/* <LogoSvgLight onClick={changeTheme} /> */}
             <div className="textDiv">
