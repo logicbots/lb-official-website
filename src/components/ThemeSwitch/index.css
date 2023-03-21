@@ -1,0 +1,139 @@
+.switch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+span.switcher {
+  /* width: 200px; */
+  /* height: 50px; */
+  border-radius: 25px;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%) rotate(270deg);
+  right: -1.75vw;
+  /* margin: 20px 0; */
+}
+span.switcher input {
+  appearance: none;
+  position: relative;
+  width: 10vw;
+  height: 2vw;
+  border-radius: 25px;
+  background-color: #1e1e1e;
+  outline: none;
+  font-family: "Oswald", sans-serif;
+}
+span.switcher input:before,
+span.switcher input:after {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+}
+span.switcher input:before {
+  content: "LIGHT";
+  left: 1.5vw;
+  font-weight: 700;
+  font-size: 0.85vw;
+}
+span.switcher input:after {
+  content: "DARK";
+  right: 1.5vw;
+  font-weight: 700;
+  font-size: 0.85vw;
+}
+span.switcher label {
+  z-index: 1;
+  position: absolute;
+  top: -1px;
+  bottom: 4px;
+  border-radius: 25px;
+}
+span.switcher.switcher-1 input {
+  transition: 0.25s -0.1s;
+}
+span.switcher.switcher-1 input:checked {
+  background-color: #fff;
+}
+span.switcher.switcher-1 input:checked:before {
+  color: #fff;
+  transition: color 0.5s 0.2s;
+}
+span.switcher.switcher-1 input:checked:after {
+  color: #f5b301;
+  transition: color 0.5s;
+}
+span.switcher.switcher-1 input:checked + label {
+  left: -2px;
+  right: 4.65vw;
+  background: #000;
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+span.switcher.switcher-1 input:not(:checked) {
+  background: #1e1e1e;
+  transition: background 0.5s -0.1s;
+}
+span.switcher.switcher-1 input:not(:checked):before {
+  color: #fff;
+  transition: color 0.5s;
+}
+span.switcher.switcher-1 input:not(:checked):after {
+  color: #000;
+  transition: color 0.5s 0.2s;
+}
+span.switcher.switcher-1 input:not(:checked) + label {
+  left: 4.65vw;
+  right: 0;
+  background: #f5b301;
+  transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+}
+span.switcher.switcher-2 {
+  overflow: hidden;
+}
+span.switcher.switcher-2 input {
+  transition: background-color 0s 0.5s;
+}
+span.switcher.switcher-2 input:before {
+  color: #1e1e1e;
+}
+span.switcher.switcher-2 input:after {
+  color: #fff;
+}
+span.switcher.switcher-2 input:checked {
+  background-color: #fff;
+}
+span.switcher.switcher-2 input:checked + label {
+  background: #fff;
+  animation: turn-on 0.5s ease-out;
+}
+@keyframes turn-on {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+span.switcher.switcher-2 input:not(:checked) {
+  background: #1e1e1e;
+}
+span.switcher.switcher-2 input:not(:checked) + label {
+  background: #1e1e1e;
+  animation: turn-off 0.5s ease-out;
+}
+@keyframes turn-off {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+span.switcher.switcher-2 label {
+  top: 0px;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+}

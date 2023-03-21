@@ -1,58 +1,49 @@
 import React, { useEffect, useState } from "react";
 import LogoSvgLight from "../../components/LogoSvgLight";
 import LogoSvgDark from "../../components/LogoSvgDark";
+import TeamSvgDark from "../../components/TeamSvgDark";
 import "../../style/index.css";
 
 const LandingPage = () => {
-  const [dark, setDark] = useState("");
-  const [light, setLight] = useState("");
-  const [textColor, setTextColor] = useState("text-light-theme");
+  const [themeClass, setThemeClass] = useState("bg-dark-svg");
+  const [textColor, setTextColor] = useState("text-dark-theme");
+  const [isVisible, setIsVisible] = useState(false);
 
   const changeTheme = () => {
-    if (dark === "d-none") {
-      setDark("");
-      setLight("d-none");
-      setTextColor("text-dark-theme");
-    } else {
-      setDark("d-none");
-      setLight("");
+    if (!isVisible) {
+      setThemeClass("bg-light-svg");
       setTextColor("text-light-theme");
+    } else {
+      setThemeClass("bg-dark-svg");
+      setTextColor("text-dark-theme");
     }
+    setIsVisible(!isVisible);
   };
 
-  useEffect(() => {
-    setDark("d-none");
-  }, []);
   return (
     <div>
-      <div className="svgDiv">
-        <div
-          className={
-            "d-flex justify-content-center align-items-center height-100 bg-light-svg " +
-            light
-          }
-        >
-          <LogoSvgLight onClick={changeTheme} />
-          <div className="textDiv">
-            <p className={`${textColor} cursor noselect`} onClick={changeTheme}>
-              Click to switch mode|
-            </p>
+      <section id="landing">
+        <div className="svgDiv">
+          <div
+            className={`d-flex justify-content-center align-items-center height-100  ${themeClass}`}
+          >
+            {isVisible ? (
+              <LogoSvgLight onClick={changeTheme} />
+            ) : (
+              <LogoSvgDark onClick={changeTheme} />
+            )}
+            {/* <LogoSvgLight onClick={changeTheme} /> */}
+            <div className="textDiv">
+              <p
+                className={`${textColor} cursor noselect mb-0 `}
+                onClick={changeTheme}
+              >
+                Click to switch mode|
+              </p>
+            </div>
           </div>
         </div>
-        <div
-          className={
-            "d-flex justify-content-center align-items-center height-100 bg-dark-svg " +
-            dark
-          }
-        >
-          <LogoSvgDark onClick={changeTheme} />
-          <div className="textDiv">
-            <p className={`${textColor} cursor noselect`} onClick={changeTheme}>
-              Click to switch mode|
-            </p>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };

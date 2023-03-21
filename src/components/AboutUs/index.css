@@ -1,0 +1,270 @@
+.body-content {
+  padding-left: 4vw;
+  position: absolute;
+  top: 25vh;
+  height: auto;
+}
+/* quotes image css and animation */
+.quotesDiv .quotesImg {
+  width: 4vw;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+.quotesImg-without {
+  width: 4vw;
+  opacity: 1;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* top left logo css and animation */
+.logoTopLeft-without {
+  position: absolute;
+  left: 4.3vw;
+  top: 2.26vw;
+  height: 5.5vw;
+}
+.logo-top .logoTopLeft {
+  /* position: absolute;
+  left: 4.3vw;
+  right: 87.39vw;
+  top: 2vw;
+  bottom: 86.3vw;
+  height: 5.5vw; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 40vh;
+  transform: translate(-50%, -50%) scale(1);
+  animation: move 2s forwards;
+}
+@keyframes move {
+  /* from {
+    left: 50%;
+    top: 50%;
+    height: 40vh;
+    transform: translate(-50%, -50%) scale(1);
+  } */
+  to {
+    left: 8.3vw;
+    top: 5vw;
+    height: 5.5vw;
+  }
+}
+.text-dark-color {
+  color: #f5b301;
+}
+.logo-top-right {
+  position: absolute;
+  top: 2vw;
+  right: 0;
+  transform: translateX(-100%);
+  padding-right: 2vw;
+  animation: slide-in-r 2s forwards; /* animation properties */
+}
+@keyframes slide-in-r {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.logo-top-right p {
+  font-size: 2vw;
+  font-weight: 600;
+}
+.logo-top-right svg {
+  height: 1.35vw;
+  margin: auto;
+  padding: 0 0.75vw;
+}
+.quoteTextDiv {
+  margin-top: 1.75vw;
+}
+
+/* Quotes text css and animation  */
+.textTyping {
+  font-size: 2.25vw;
+  font-weight: 600;
+}
+.heading-text {
+  font-size: 2.25vw;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(30) forwards;
+}
+/* .heading-text::after {
+  content: "|";
+  display: inline-block;
+  animation: blink 0.7s infinite alternate;
+} */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+/* subheading css and animation */
+.subHeading {
+  font-size: 1vw;
+  animation: slideIn 2s ease-in-out forwards;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/* team svg css and animation */
+.teamSvgDiv {
+  /* position: absolute; */
+  bottom: 0;
+  right: 6vw;
+  height: 96vh;
+  background-image: url("../../assets/team.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  animation: popIn 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+  transform-origin: center;
+  opacity: 0;
+}
+.teamSvgDiv-without{
+  bottom: 0;
+  right: 6vw;
+  height: 96vh;
+  background-image: url("../../assets/team.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  /* 25%{
+    transform: scale(0.6);
+    opacity: 1;
+  } */
+  90% {
+    transform: scale(1.005);
+    opacity: 1;
+  }
+  /* 75% {
+    transform: scale(0.8);
+    opacity: 1;
+  } */
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.teamSvg {
+  width: 95vh;
+}
+.socials {
+  position: absolute;
+  top: 56vh;
+  right: 2.75vw;
+}
+.socials svg {
+  font-size: 1.5vw;
+}
+
+@keyframes fadeinout {
+  0% {
+    fill: #686158;
+  }
+  50% {
+    fill: #f5b301;
+  }
+  100% {
+    fill: #686158;
+  }
+}
+#rounded-rect {
+  animation: fadeinout 2s ease-in-out 3;
+}
+
+/* Webkit-based browsers */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+/* Firefox */
+::-moz-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+::-moz-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+::-moz-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+}
+.stick {
+  position: fixed;
+}
+
+#aboutusPage,
+#landingPage {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
