@@ -1,11 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import logoDark from "../../assets/dark.svg";
+import logoLight from "../../assets/light.svg";
 import quotes from "../../assets/quotes.svg";
 import ThemeSwitch from "../ThemeSwitch";
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 import EyeLogo from "../EyeLogo";
+import { setTheme } from "../../action/setTheme";
+import { connect } from "react-redux";
 
-const OurTeam = () => {
+const OurTeam = (props) => {
+  const {
+    theme: { isBlack },
+  } = props;
+  const switchRef = useRef(false);
   useEffect(() => {
     //const slide = document.querySelector(".subHeading");
     const fadeinout = document.querySelector(".logo-top-right");
@@ -47,16 +54,26 @@ const OurTeam = () => {
 
   return (
     <div className="aboutUs">
-      <div className="height-100 bg-dark-svg pt-4">
+      <div
+        className={
+          isBlack
+            ? "height-100 bg-dark-svg pt-4"
+            : "height-100 bg-light-svg pt-4"
+        }
+      >
         <div className="row mx-0">
           <div className="col-6">
             <div className="logo-top">
-              <img src={logoDark} className="logoTopLeft-without" />
+              {isBlack ? (
+                <img src={logoDark} className="logoTopLeft-without" />
+              ) : (
+                <img src={logoLight} className="logoTopLeft-without" />
+              )}
             </div>
           </div>
           <div className="col-6">
             <div className="logo-top-right d-flex">
-              <p className="text-dark-color mb-0 text-uppercase">Our Team</p>
+              <p className="text-dark-color mb-0 text-uppercase">Team</p>
               <EyeLogo />
               {/* <img src={defaultLogo} /> */}
             </div>
@@ -78,9 +95,18 @@ const OurTeam = () => {
                   <br />
                   Solution for
                   <br />
-                  Your tech
+                  Your tech problems
+                </p>
+              </div>
+              <div className="quoteTextDiv">
+                <p className="text-white subHeading">
+                  With a culture of freedom and growth,
                   <br />
-                  problems
+                  LogicBots is more than just a software agency.
+                  <br />
+                  It's community dedicated to making
+                  <br />
+                  the world a better place through technology.
                 </p>
               </div>
             </div>
@@ -92,22 +118,39 @@ const OurTeam = () => {
           </div>
         </div>
         <div className="switch">
-          <ThemeSwitch />
+          <ThemeSwitch switchRef={switchRef} />
         </div>
         <div className="socials">
           <div className="insta my-2">
-            <FaInstagram className="text-white" />
+            {isBlack ? (
+              <FaInstagram className="text-white" />
+            ) : (
+              <FaInstagram className="text-primary" />
+            )}
           </div>
           <div className="facebook my-2">
-            <FaFacebookF className="text-white" />
+            {isBlack ? (
+              <FaFacebookF className="text-white" />
+            ) : (
+              <FaFacebookF className="text-primary" />
+            )}
           </div>
           <div className="twitter my-2">
-            <FaTwitter className="text-white" />
+            {isBlack ? (
+              <FaTwitter className="text-white" />
+            ) : (
+              <FaTwitter className="text-primary" />
+            )}
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-export default OurTeam;
+const mapStateToProps = (state) => ({
+  ...state,
+});
+const mapDispatchToProps = (dispatch) => ({
+  setTheme: (val) => dispatch(setTheme(val)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(OurTeam);
