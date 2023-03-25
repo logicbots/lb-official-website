@@ -1,6 +1,6 @@
 import React from "react";
 
-const TeamWithName = () => {
+const TeamWithoutName = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,61 +15,21 @@ const TeamWithName = () => {
         id="deepakImg"
         fill="url(#pattern0)"
         d="M192.985 11.521H512.038V645.4309999999999H192.985z"
-        onMouseOver={() => {
-          document
-            .querySelectorAll("#deepak")
-            .forEach((path) => (path.style.opacity = 1));
-        }}
-        onMouseOut={() => {
-          document
-            .querySelectorAll("#deepak")
-            .forEach((path) => (path.style.opacity = 0));
-        }}
       ></path>
       <path
         id="rachitImg"
         fill="url(#pattern1)"
         d="M453.332 151.572H820.281V767.833H453.332z"
-        onMouseOver={() => {
-          document
-            .querySelectorAll("#rachit")
-            .forEach((path) => (path.style.opacity = 1));
-        }}
-        onMouseOut={() => {
-          document
-            .querySelectorAll("#rachit")
-            .forEach((path) => (path.style.opacity = 0));
-        }}
       ></path>
       <path
         id="santoshImg"
         fill="url(#pattern2)"
         d="M338.174 440.394H713.469V770.135H338.174z"
-        onMouseOut={() => {
-          document
-            .querySelectorAll("#santosh")
-            .forEach((path) => (path.style.opacity = 0));
-        }}
-        onMouseOver={() => {
-          document
-            .querySelectorAll("#santosh")
-            .forEach((path) => (path.style.opacity = 1));
-        }}
       ></path>
       <path
         id="ashtamImg"
         fill="url(#pattern3)"
         d="M0 281.263H470.394V770.825H0z"
-        onMouseOut={() => {
-          document
-            .querySelectorAll("#ashtam")
-            .forEach((path) => (path.style.opacity = 0));
-        }}
-        onMouseOver={() => {
-          document
-            .querySelectorAll("#ashtam")
-            .forEach((path) => (path.style.opacity = 1));
-        }}
       ></path>
       <path
         id="deepak"
@@ -229,4 +189,4 @@ const TeamWithName = () => {
   );
 };
 
-export default TeamWithName;
+export default TeamWithoutName;

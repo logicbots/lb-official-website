@@ -155,7 +155,7 @@
   bottom: 0;
   right: 6vw;
   height: 96vh;
-  background-image: url("../../assets/team.svg");
+  /* background-image: url("../../assets/team.svg"); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -163,11 +163,16 @@
   transform-origin: center;
   opacity: 0;
 }
-.teamSvgDiv-without{
+.teamSvg{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.teamSvgDiv-without {
   bottom: 0;
   right: 6vw;
   height: 96vh;
-  background-image: url("../../assets/team.svg");
+  /* background-image: url("../../assets/team.svg"); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -193,10 +198,6 @@
     transform: scale(1);
     opacity: 1;
   }
-}
-
-.teamSvg {
-  width: 95vh;
 }
 .socials {
   position: absolute;
@@ -267,4 +268,16 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+#deepak {
+  opacity: 0;
+}
+#rachit {
+  opacity: 0;
+}
+#ashtam {
+  opacity: 0;
+}
+#santosh {
+  opacity: 0;
 }

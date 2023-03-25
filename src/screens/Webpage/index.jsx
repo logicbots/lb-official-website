@@ -14,7 +14,10 @@ function WebPage() {
       //console.log("firstload")
       const scrollLeft = window.scrollX;
       const scrollTop = window.scrollY;
-      if (
+      if(scrollTop === 0){
+        setPageCount(0);
+      }
+      else if (
         scrollPosition > scrollLeft ||
         (scrollPosition === scrollLeft && scrollTop < lastScrollPosition.y)
       ) {

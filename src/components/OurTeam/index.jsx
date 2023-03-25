@@ -7,6 +7,8 @@ import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa";
 import EyeLogo from "../EyeLogo";
 import { setTheme } from "../../action/setTheme";
 import { connect } from "react-redux";
+import teamSvg from "../../assets/team.svg";
+import TeamWithName from "../TeamWithName";
 
 const OurTeam = (props) => {
   const {
@@ -113,7 +115,7 @@ const OurTeam = (props) => {
           </div>
           <div className="col-sm-8 col-md-9 col-lg-8">
             <div className="teamSvgDiv-without w-100">
-              {/* <img src={team} className="teamSvg" /> */}
+              <TeamWithName/>
             </div>
           </div>
         </div>
