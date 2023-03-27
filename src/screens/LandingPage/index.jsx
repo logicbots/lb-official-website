@@ -3,21 +3,20 @@ import LogoSvgLight from "../../components/LogoSvgLight";
 import LogoSvgDark from "../../components/LogoSvgDark";
 import TeamSvgDark from "../../components/TeamSvgDark";
 import "../../style/index.css";
+import { setTheme } from "../../action/setTheme";
+import { connect } from "react-redux";
 
-const LandingPage = () => {
+const LandingPage = (props) => {
+  const {
+    theme: { isBlack },
+  } = props;
+  //console.log("theme>>>",isBlack)
   const [themeClass, setThemeClass] = useState("bg-dark-svg");
   const [textColor, setTextColor] = useState("text-dark-theme");
   const [isVisible, setIsVisible] = useState(false);
 
   const changeTheme = () => {
-    if (!isVisible) {
-      setThemeClass("bg-light-svg");
-      setTextColor("text-light-theme");
-    } else {
-      setThemeClass("bg-dark-svg");
-      setTextColor("text-dark-theme");
-    }
-    setIsVisible(!isVisible);
+    props.setTheme(!isBlack);
   };
 
   return (
@@ -25,9 +24,9 @@ const LandingPage = () => {
       <section id="landing">
         <div className="svgDiv">
           <div
-            className={`d-flex justify-content-center align-items-center height-100  ${themeClass}`}
+            className={!isBlack ? "d-flex justify-content-center align-items-center height-100 bg-light-svg" : "d-flex justify-content-center align-items-center height-100 bg-dark-svg"}
           >
-            {isVisible ? (
+            {!isBlack ? (
               <LogoSvgLight onClick={changeTheme} />
             ) : (
               <LogoSvgDark onClick={changeTheme} />
@@ -35,10 +34,10 @@ const LandingPage = () => {
             {/* <LogoSvgLight onClick={changeTheme} /> */}
             <div className="textDiv">
               <p
-                className={`${textColor} cursor noselect mb-0 `}
+                className={!isBlack ? "text-light-theme cursor noselect mb-0 " : "text-dark-theme cursor noselect mb-0 "}
                 onClick={changeTheme}
               >
-                Click to switch mode|
+                Click to switch mode<span className="binker"></span>
               </p>
             </div>
           </div>
@@ -48,4 +47,10 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+const mapStateToProps = (state) => ({
+  ...state,
+});
+const mapDispatchToProps = (dispatch) => ({
+  setTheme: (val) => dispatch(setTheme(val)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);

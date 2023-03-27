@@ -68,7 +68,7 @@ span.switcher.switcher-1 input:checked:after {
 span.switcher.switcher-1 input:checked + label {
   left: -2px;
   right: 4.65vw;
-  background: #000;
+  background: #20124d;
   transition: left 0.5s, right 0.4s 0.2s;
 }
 span.switcher.switcher-1 input:not(:checked) {
