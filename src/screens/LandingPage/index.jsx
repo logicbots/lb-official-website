@@ -37,7 +37,7 @@ const LandingPage = (props) => {
                 className={!isBlack ? "text-light-theme cursor noselect mb-0 " : "text-dark-theme cursor noselect mb-0 "}
                 onClick={changeTheme}
               >
-                Click to switch mode|
+                Click to switch mode<span className="binker"></span>
               </p>
             </div>
           </div>

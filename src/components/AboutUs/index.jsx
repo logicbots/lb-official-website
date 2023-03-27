@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { setTheme } from "../../action/setTheme";
 import teamSvg from "../../assets/team_1.svg";
 import TeamWithoutName from "../TeamWithoutName";
+import quotesLight from "../../assets/quotes-light.svg";
 
 const AboutUs = (props) => {
   const {
@@ -29,7 +30,7 @@ const AboutUs = (props) => {
     fadeinout.style.opacity = "0";
     fadeIn.style.opacity = "0";
     move.style.opacity = "0";
-    typing.style.width = "0";
+    typing.style.opacity = "0";
     popIn.style.opacity = "0";
     popIn.style.transform = "scale(0)";
 
@@ -46,13 +47,13 @@ const AboutUs = (props) => {
     }, 2000);
     setTimeout(() => {
       fadeIn.style.opacity = "1";
-    }, 5000);
+    }, 3000);
     setTimeout(() => {
-      typing.style.width = "100%";
-    }, 7000);
+      typing.style.opacity = "1";
+    }, 4000);
     setTimeout(() => {
       slide.style.opacity = "1";
-    }, 9000);
+    }, 5000);
   });
 
   return (
@@ -76,8 +77,14 @@ const AboutUs = (props) => {
           </div>
           <div className="col-6">
             <div className="logo-top-right d-flex">
-              <p className="text-dark-color mb-0">ABOUT US</p>
-              <EyeLogo />
+              <p
+                className={
+                  isBlack ? "text-dark-color mb-0" : "text-light-color mb-0"
+                }
+              >
+                ABOUT US
+              </p>
+              <EyeLogo isBlack={isBlack} />
               {/* <img src={defaultLogo} /> */}
             </div>
           </div>
@@ -86,7 +93,11 @@ const AboutUs = (props) => {
           <div className="col-sm-4 col-md-3 col-lg-4">
             <div className="body-content">
               <div className="quotesDiv">
-                <img src={quotes} className="quotesImg" />
+              {isBlack ? 
+                  <img src={quotes} className="quotesImg" />
+                  :
+                  <img src={quotesLight} className="quotesImg" />
+                }
               </div>
               <div className="quoteTextDiv">
                 {/* <p className="heading-text text-uppercase text-white mb-0 ">
@@ -100,10 +111,22 @@ const AboutUs = (props) => {
                 <br />
                 <span>knows</span>
               </p> */}
-                <p className="heading-text text-uppercase text-white mb-0 ">
+                <p
+                  className={
+                    isBlack
+                      ? "heading-text text-uppercase text-white mb-0"
+                      : "heading-text text-uppercase text-dark-light-color mb-0"
+                  }
+                >
                   We speak the
                   <br />
-                  <span className="textTyping text-uppercase mb-0 text-dark-color">
+                  <span
+                    className={
+                      isBlack
+                        ? "textTyping text-uppercase mb-0 text-dark-color "
+                        : "textTyping text-uppercase mb-0 text-light-color "
+                    }
+                  >
                     Language
                   </span>
                   <br />
@@ -113,7 +136,13 @@ const AboutUs = (props) => {
                 </p>
               </div>
               <div className="quoteTextDiv">
-                <p className="text-white subHeading">
+                <p
+                  className={
+                    isBlack
+                      ? "text-white subHeading fw-semibold"
+                      : "text-dark-light-color subHeading fw-semibold"
+                  }
+                >
                   We begin each project by envisioning the end result
                   <br />
                   and then use our experitise,analytical skills, and artistic
@@ -126,12 +155,18 @@ const AboutUs = (props) => {
                 </p>
               </div>
               <div className="skillDiv">
-                <p className="text-uppercase text-dark-color subHeading">
+                <p
+                  className={
+                    isBlack
+                      ? "text-uppercase text-dark-color subHeading fw-semibold"
+                      : "text-uppercase text-light-color subHeading fw-semibold"
+                  }
+                >
                   Java,C#,Node js,react js,vue js,angular js,react
                   <br />
                   native,flutter,sql,nosql,aws,azure
                 </p>
-                <p className="text-end text-secondary subHeading">
+                <p className="text-end text-secondary subHeading fw-semibold">
                   Explore more...
                 </p>
               </div>

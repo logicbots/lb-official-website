@@ -9,6 +9,7 @@ import { setTheme } from "../../action/setTheme";
 import { connect } from "react-redux";
 import teamSvg from "../../assets/team.svg";
 import TeamWithName from "../TeamWithName";
+import quotesLight from "../../assets/quotes-light.svg";
 
 const OurTeam = (props) => {
   const {
@@ -75,8 +76,16 @@ const OurTeam = (props) => {
           </div>
           <div className="col-6">
             <div className="logo-top-right d-flex">
-              <p className="text-dark-color mb-0 text-uppercase">Team</p>
-              <EyeLogo />
+              <p
+                className={
+                  isBlack
+                    ? "text-dark-color mb-0 text-uppercase"
+                    : "text-light-color mb-0 text-uppercase"
+                }
+              >
+                Team
+              </p>
+              <EyeLogo isBlack={isBlack} />
               {/* <img src={defaultLogo} /> */}
             </div>
           </div>
@@ -85,13 +94,29 @@ const OurTeam = (props) => {
           <div className="col-sm-4 col-md-3 col-lg-4">
             <div className="body-content">
               <div className="quotesDiv">
-                <img src={quotes} className="quotesImg-without" />
+                {isBlack ? 
+                  <img src={quotes} className="quotesImg-without" />
+                  :
+                  <img src={quotesLight} className="quotesImg-without" />
+                }
               </div>
               <div className="quoteTextDiv">
-                <p className="heading-text text-uppercase text-white mb-0 ">
+                <p
+                  className={
+                    isBlack
+                      ? "heading-text text-uppercase text-white mb-0 "
+                      : "heading-text text-uppercase text-dark-light-color mb-0 "
+                  }
+                >
                   We Create
                   <br />
-                  <span className="textTyping text-uppercase mb-0 text-dark-color">
+                  <span
+                    className={
+                      isBlack
+                        ? "textTyping text-uppercase mb-0 text-dark-color"
+                        : "textTyping text-uppercase mb-0 text-light-color"
+                    }
+                  >
                     Custom-invotive
                   </span>
                   <br />
@@ -101,7 +126,13 @@ const OurTeam = (props) => {
                 </p>
               </div>
               <div className="quoteTextDiv">
-                <p className="text-white subHeading">
+                <p
+                  className={
+                    isBlack
+                      ? "text-white subHeading"
+                      : "text-dark-light-color subHeading"
+                  }
+                >
                   With a culture of freedom and growth,
                   <br />
                   LogicBots is more than just a software agency.
@@ -115,7 +146,7 @@ const OurTeam = (props) => {
           </div>
           <div className="col-sm-8 col-md-9 col-lg-8">
             <div className="teamSvgDiv-without w-100">
-              <TeamWithName/>
+              <TeamWithName />
             </div>
           </div>
         </div>
